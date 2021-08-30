@@ -1,0 +1,157 @@
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), url('~assets/fonts/OpenSans/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), url('~assets/fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), url('~assets/fonts/OpenSans/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), url('~assets/fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), url('~assets/fonts/OpenSans/OpenSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: local('Lato'), url('~assets/fonts/Lato/Lato-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+html {
+    font-family: 'Open Sans';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  --orangey-red-color: rgb(238, 83, 55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: 'Open Sans', Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.fadeInAnimation {
+  animation: fadeIn ease-in 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.DisplayBooleanList__outer-list-container {
+    width: 100%;
+}
+
+.DisplayBooleanList__h2 {
+    color: darkslateblue;
+    font-size: 1.75em;
+    margin: 30px 0 30px 6%;
+    text-align: left;
+}
+
+.DisplayBooleanList__list-container {
+    width: 100%;
+}
+
+.DisplayBooleanList__list__ul {
+    width: 94%;
+    margin: 0 0 0 6%;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+.DisplayBooleanList__list__li {
+    width: 31%;
+    margin-top: 35px;
+    text-align: left;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+.DisplayBooleanList__list__li .icon {
+    font-size: 0.8em;
+    margin-right: 15px;
+}
+
+
+.DisplayListForObject__outer-list-container {
+    width: 100%;
+}
+
+.DisplayListForObject__h2 {
+    color: darkslateblue;
+    font-size: 1.75em;
+    margin: 30px 0 30px 6%;
+    text-align: left;
+}
+
+.DisplayListForObject__list-container {
+    width: 100%;
+}
+
+.DisplayListForObject__list__ul {
+    width: 94%;
+    margin: 0 0 0 6%;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+.DisplayListForObject__list__li {
+    width: 31%;
+    margin-top: 35px;
+    text-align: left;
+}
+
+.DisplayListForObject__span-text, 
+.DisplayListForObject__span-value {
+    display: inline-block;
+    text-align: left;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+.DisplayListForObject__span-text {
+    min-width: 60%;
+}
