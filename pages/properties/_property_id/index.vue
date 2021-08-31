@@ -26,9 +26,11 @@ export default {
     async created() {
         this.property_id = this.$route.params.property_id
         const url = `${BASE_API_URL}/properties/${this.property_id}`
+        console.log('home > created > get properties > url', url)
         try {
             const resp = await axios.get(url)
             this.property = resp.data
+            console.log('home > created > get properties > resp.data', resp.data)
         }
         catch(err) {
             console.log(err.message);
