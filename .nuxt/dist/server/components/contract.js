@@ -282,7 +282,9 @@ function debounce(fn, ms = 300) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BASE_API_URL; });
-const BASE_API_URL = 'http://localhost:5000/api'; //export const BASE_API_URL = 'https://creator-project-e5c73.ondigitalocean.app/api'
+//export const BASE_API_URL = 'http://localhost:5000/api'
+//export const BASE_API_URL = 'https://creator-project-e5c73.ondigitalocean.app/api'
+const BASE_API_URL = ' https://nuxt-creator-project.herokuapp.com/api';
 
 /***/ }),
 
