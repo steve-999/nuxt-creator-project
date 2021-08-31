@@ -1,0 +1,53 @@
+[
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "c:\\\\www\\\\coursera\\\\vue\\\\nuxt-creator-project\\\\pages\\\\admin.vue",
+    "chunkName": "pages/admin",
+    "children": [
+      {
+        "name": "admin-contracts",
+        "path": "contracts",
+        "component": "c:\\\\www\\\\coursera\\\\vue\\\\nuxt-creator-project\\\\pages\\\\admin\\\\contracts.vue",
+        "chunkName": "pages/admin/contracts",
+        "_name": "_66f7e3ae"
+      },
+      {
+        "name": "admin-media",
+        "path": "media",
+        "component": "c:\\\\www\\\\coursera\\\\vue\\\\nuxt-creator-project\\\\pages\\\\admin\\\\media.vue",
+        "chunkName": "pages/admin/media",
+        "_name": "_ed90aa1e"
+      },
+      {
+        "name": "admin-property_info",
+        "path": "property_info",
+        "component": "c:\\\\www\\\\coursera\\\\vue\\\\nuxt-creator-project\\\\pages\\\\admin\\\\property_info.vue",
+        "chunkName": "pages/admin/property_info",
+        "_name": "_54740e36"
+      },
+      {
+        "name": "admin-room_details",
+        "path": "room_details",
+        "component": "c:\\\\www\\\\coursera\\\\vue\\\\nuxt-creator-project\\\\pages\\\\admin\\\\room_details.vue",
+        "chunkName": "pages/admin/room_details",
+        "_name": "_04054a61"
+      }
+    ],
+    "_name": "_6b89d37a"
+  },
+  {
+    "name": "properties-property_id",
+    "path": "/properties/:property_id",
+    "component": "c:\\\\www\\\\coursera\\\\vue\\\\nuxt-creator-project\\\\pages\\\\properties\\\\_property_id\\\\index.vue",
+    "chunkName": "pages/properties/_property_id/index",
+    "_name": "_40f26cad"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "c:\\\\www\\\\coursera\\\\vue\\\\nuxt-creator-project\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_ce687b74"
+  }
+]

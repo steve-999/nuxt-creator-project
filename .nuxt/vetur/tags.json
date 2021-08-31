@@ -1,0 +1,80 @@
+{
+  "AmenitiesContainer": {
+    "description": "Auto imported from components/AmenitiesContainer.vue"
+  },
+  "Availability": {
+    "description": "Auto imported from components/Availability.vue"
+  },
+  "Contract": {
+    "description": "Auto imported from components/Contract.vue"
+  },
+  "DateTabs": {
+    "description": "Auto imported from components/DateTabs.vue"
+  },
+  "Eligibility": {
+    "description": "Auto imported from components/Eligibility.vue"
+  },
+  "EnergyPerformance": {
+    "description": "Auto imported from components/EnergyPerformance.vue"
+  },
+  "Facilities": {
+    "description": "Auto imported from components/Facilities.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "GoogleMap": {
+    "description": "Auto imported from components/GoogleMap.vue"
+  },
+  "Photos": {
+    "description": "Auto imported from components/Photos.vue"
+  },
+  "PriceCTA": {
+    "description": "Auto imported from components/PriceCTA.vue"
+  },
+  "PropertyHeading": {
+    "description": "Auto imported from components/PropertyHeading.vue"
+  },
+  "PropertyInfo": {
+    "description": "Auto imported from components/PropertyInfo.vue"
+  },
+  "PropertySummary": {
+    "description": "Auto imported from components/PropertySummary.vue"
+  },
+  "RoomDetails": {
+    "description": "Auto imported from components/RoomDetails.vue"
+  },
+  "TopOfPageContainer": {
+    "description": "Auto imported from components/TopOfPageContainer.vue"
+  },
+  "Utilities": {
+    "description": "Auto imported from components/Utilities.vue"
+  },
+  "AdminEligibility": {
+    "description": "Auto imported from components/admin/AdminEligibility.vue"
+  },
+  "AdminEnergyPerformance": {
+    "description": "Auto imported from components/admin/AdminEnergyPerformance.vue"
+  },
+  "AdminFacilities": {
+    "description": "Auto imported from components/admin/AdminFacilities.vue"
+  },
+  "AdminSelectPropertyModal": {
+    "description": "Auto imported from components/admin/SelectPropertyModal.vue"
+  },
+  "GenericDisplayBooleanList": {
+    "description": "Auto imported from components/generic/DisplayBooleanList.vue"
+  },
+  "GenericDisplayListForObject": {
+    "description": "Auto imported from components/generic/DisplayListForObject.vue"
+  },
+  "GenericInputBooleanList": {
+    "description": "Auto imported from components/generic/InputBooleanList.vue"
+  },
+  "GenericInputListForm": {
+    "description": "Auto imported from components/generic/InputListForm.vue"
+  },
+  "GenericInputListWithLabels": {
+    "description": "Auto imported from components/generic/InputListWithLabels.vue"
+  }
+}
