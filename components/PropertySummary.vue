@@ -107,8 +107,8 @@ export default {
 .property__details-box {
     position: absolute;
     top: 5%;
-    left: 27.5%;
-    width: 45%;
+    left: 30%;
+    width: 40%;
     height: 90%;
     background-color: white;
     z-index: 2;
@@ -140,6 +140,13 @@ export default {
     font-weight: 300;
     color: #888;
     padding: 0.2em 0;
+}
+
+.property__rooms-included {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .property__num-bedrooms,

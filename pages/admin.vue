@@ -1,5 +1,5 @@
 <template>
-    <div class="admin-page-container" v-if="properties">
+    <div class="admin-page-container fadeInAnimation" v-if="properties">
         <div class="select-property-container">
             <button class="select-property__button" @click="handleClickOpenModal">Select a property to edit</button>
             <SelectPropertyModal 
@@ -12,21 +12,23 @@
         </div>
 
         <div class="admin-content-container">
-            <div class="tabs-container">
+            <div class="tabs-container" v-if="!show_modal">
                 <ul class="tabs__ul">
-                    <li 
-                        v-for="idx in tabs.length" 
-                        :key="idx" 
-                        class="tabs__li" 
-                        @click="handleClickTab(tabs[idx-1].route_name)"
-                        :ref="tabs[idx-1].route_name"
-                    >
-                        <NuxtLink :to="`/admin/${tabs[idx-1].route_name}`" class="tab">{{ tabs[idx-1].text }}</NuxtLink>
-                    </li>
+                    <div v-for="idx in tabs.length" :key="idx"> 
+                        <li class="tabs__li">
+                            <NuxtLink 
+                                :to="`/admin/${tabs[idx-1].route_name}`"
+                                @click="handleClickTab(tabs[idx-1].route_name)"
+                                :ref="tabs[idx-1].route_name" 
+                                class="tab"
+                            >
+                                {{ tabs[idx-1].text }}
+                            </NuxtLink>
+                        </li>                
+                    </div>
                 </ul>
             </div>
             <div class="admin-edit-container">
-                <!-- <router-view></router-view> -->
                 <NuxtChild :propertiesData="properties" :property_id="selected_property_id" />
             </div>
         </div>
@@ -36,8 +38,6 @@
 <script>
 import axios from 'axios';
 import { BASE_API_URL } from '../environment/environment.js'
-//const BASE_API_URL = 'http://localhost:5000/api'
-//const BASE_API_URL = 'https://creator-project-e5c73.ondigitalocean.app/api'
 import SelectPropertyModal from '../components/admin/SelectPropertyModal.vue'
 import { 
     create_address_string, 
@@ -64,29 +64,15 @@ export default {
     components: {
         SelectPropertyModal
     },
-    // async created() {
-    //     const url = `${BASE_API_URL}/properties`;
-    //     try {
-    //         const resp = await axios.get(url);
-    //         this.properties = resp.data
-    //     }
-    //     catch(err) {
-    //         console.log(err.message);
-    //     }        
-    // },
     fetch() {
         const url = `${BASE_API_URL}/properties`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
                 this.properties = data
-                console.log('admin > this.properties', this.properties)
             })
     },
     computed: {
-        // property() {
-        //     return this.propertyData ? this.propertyData : undefined
-        // },
         selected_property_string() {
             if (!this.selected_property_id)
                 return undefined
@@ -105,8 +91,6 @@ export default {
             this.selected_property_id = property_id
             this.show_modal = false
             this.$router.push({ path: '/admin/property_info'})
-            //this.tabs.forEach(tab => this.$refs[tab.route_name].classList.remove('active_tab'))
-            //this.$refs['AdminPropertyInfo'].classList.add('active_tab')
         },
         handleClickOpenModal() {
             this.show_modal = true
@@ -116,10 +100,7 @@ export default {
                 alert('Please select a property to edit')
                 return
             }
-            console.log('admin > handleClickTab > route_name', route_name)
             this.$router.push({ path: `/admin/${route_name}`})
-            //this.tabs.forEach(tab => this.$refs[tab.route_name].classList.remove('active_tab'))
-            //this.$refs[route_name].classList.add('active_tab')
         },
         closeModal() {
             this.show_modal = false
@@ -144,9 +125,28 @@ export default {
     margin: 0 auto;
 }
 
+.select-property-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-property__button {
+    background-color: rgb(91, 142, 236);
+    margin: 20px auto;
+    text-align: center;
+}
+
 .selected-property__div {
-    font-size: 0.95em;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #444;
     padding: 8px 0;
+    margin: 0 auto 10px auto;
+    text-align: center;
+    height: 40px;
 }
 
 /******************************************************/
@@ -162,33 +162,41 @@ export default {
     justify-content: center;
     padding: 0;
     margin: 0;
+    position: relative;
+    top: -5px;
 }
 
 .tabs__li {
     display: inline-block;
+
+}
+
+.tabs__li a {
     margin: 0 1px;
-    padding: 7px 8px;
+    padding: 5px 12px;
     background-color: rgb(118, 105, 207);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     color: white;
     font-size: 1em;
-    font-weight: 400;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
+    text-decoration: none;
 }
 
-.tabs__li:hover {
+.tabs__li a:hover {
     background-color: mediumorchid;
 }
 
-.active_tab {
+.tabs__li a.nuxt-link-active {
     background-color: var(--orangey-red-color);
 }
 
 .admin-edit-container {
     width: 90%;
     margin: 0 auto 60px auto;
+    padding: 20px 0;
     border: 2px solid #dcdcdc;
     border-radius: 15px;
     background-color: #f4f4f4;

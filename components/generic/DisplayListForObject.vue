@@ -37,4 +37,88 @@ export default {
 </script>
 
 
+<style>
 
+.DisplayBooleanList__outer-list-container {
+    width: 100%;
+}
+
+.DisplayBooleanList__h2 {
+    color: darkslateblue;
+    font-size: 1.75em;
+    margin: 30px 0 30px 6%;
+    text-align: left;
+}
+
+.DisplayBooleanList__list-container {
+    width: 100%;
+}
+
+.DisplayBooleanList__list__ul {
+    width: 94%;
+    margin: 0 0 0 6%;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+.DisplayBooleanList__list__li {
+    width: 31%;
+    margin-top: 35px;
+    text-align: left;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+.DisplayBooleanList__list__li .icon {
+    font-size: 0.8em;
+    margin-right: 15px;
+}
+
+
+.DisplayListForObject__outer-list-container {
+    width: 100%;
+}
+
+.DisplayListForObject__h2 {
+    color: darkslateblue;
+    font-size: 1.75em;
+    margin: 30px 0 30px 6%;
+    text-align: left;
+}
+
+.DisplayListForObject__list-container {
+    width: 100%;
+}
+
+.DisplayListForObject__list__ul {
+    width: 94%;
+    margin: 0 0 0 6%;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+.DisplayListForObject__list__li {
+    width: 31%;
+    margin-top: 35px;
+    text-align: left;
+}
+
+.DisplayListForObject__span-text, 
+.DisplayListForObject__span-value {
+    display: inline-block;
+    text-align: left;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+.DisplayListForObject__span-text {
+    min-width: 60%;
+}
+
+</style>

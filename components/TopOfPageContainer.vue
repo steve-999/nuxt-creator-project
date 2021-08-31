@@ -1,7 +1,7 @@
 <template>
     <div class="top-of-page-container">
         <div class="top-of-page-left-container">
-            <!-- <Photos :propertyData="property" /> -->
+            <Photos :propertyData="property" />
         </div>
         <div class="top-of-page-right-container">
             <PropertyHeading :propertyData="property" :show_top_rows="true" />
@@ -11,18 +11,10 @@
 </template>
 
 <script>
-// import Photos from './Photos.vue'
-//import PropertyHeading from './PropertyHeading.vue'
-//import PriceCTA from './PriceCTA.vue'
 
 export default {
     name: 'TopOfPageContainer',
     props: ['propertyData'],
-    // components: {
-    //     Photos,
-    //     PropertyHeading,
-    //     PriceCTA
-    // },
     computed: {
         property() {
             return this.propertyData ? this.propertyData : undefined

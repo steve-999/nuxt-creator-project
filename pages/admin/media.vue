@@ -97,13 +97,10 @@ export default {
     },
     methods: {
         handleInputListChange(name, value, indices) {
-            console.log(`AdminMedia > handleInputListChange > indices ${indices} name ${name} value ${value}`)
             const update_key = `media.${indices}.${name}` 
-            console.log('[value]', [value])
             update_mongodb(this.property_id, update_key, [value])
         },
         handleInputChange__Photos(name, value, indices) {
-            //console.log(`AdminMedia > handleInputChange__photos > indices ${indices} idx ${photo_idx} value ${value}`)
             const photo_idx = indices.split('=')[1]
             const update_key = `media.photos.${photo_idx}.${name}` 
             update_mongodb(this.property_id, update_key, value)
@@ -114,6 +111,14 @@ export default {
 </script>
 
 <style scoped>
+
+.admin-media-container h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 0 auto 15px auto;
+    text-align: center;
+    padding: 0;
+}
 
 .admin-media-photos__ul {
     list-style-type: none;
@@ -139,13 +144,6 @@ export default {
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
-
-.admin-media-photos__h3 {
-    font-size: 1.3em;
-    font-weight: 700;
-    margin: 0px auto;
-    padding: 0;
 }
 
 .floorplans-container,

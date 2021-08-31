@@ -1,7 +1,6 @@
 <template>
     <div class="contract-outer-container">
         <div class="contract-container" v-if="property">
-            <p>{{ contract_idx }}</p>
             <div class="rooms-container">
                 <RoomDetails 
                     v-for="index in num_rooms"
@@ -20,20 +19,11 @@
 </template>
 
 <script>
-// import RoomDetails from '../components/RoomDetails.vue'
-// import Utilities from '../components/Utilities.vue'
 import { get_num_rooms } from '../shared/shared_code.js'
 
 export default {
     name: 'Contract',
     props: ['propertyData', 'contract_idx'],
-    // components: {
-    //     RoomDetails,
-    //     Utilities
-    // },
-    mounted() {
-        console.log('Contract > mounted')
-    },
     computed: {
         property() {
             return this.propertyData ? this.propertyData : undefined
@@ -46,7 +36,6 @@ export default {
         },
         room_prices() {
             try { 
-                console.log('Contract > room_prices', this.property.contracts[this.contract_idx].prices )
                 return this.property.contracts[this.contract_idx].prices 
             } 
             catch(e) { return undefined } 

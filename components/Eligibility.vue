@@ -20,9 +20,6 @@ export default {
     },
     computed: {
         eligibility_list_object() {
-            if (this.propertyData) {
-                console.log('this.propertyData.eligibility', this.propertyData.eligibility)
-            }
             return this.propertyData ? this.propertyData.eligibility : undefined
         }
     }

@@ -8,61 +8,76 @@
                     class="admin-room-details__li"
                 >
                     <form>
-                        <label  class="admin-room-details__label">Room name</label>
-                        <input  class="admin-room-details__input-text" 
-                                type="text" 
-                                :room_idx="room_idx"
-                                name="room_name" 
-                                :value="room.room_name"
-                                @input="handleInputChange($event, room_idx)"
-                        />
-                        <label  class="admin-room-details__label">Room ID</label>
-                        <input  class="admin-room-details__input-text" 
-                                type="text" 
-                                :room_idx="room_idx"
-                                name="room_id" 
-                                :value="room.room_id"
-                                @input="handleInputChange($event, room_idx)"
-                        />                      
-                        <label  class="admin-room-details__label">Floor</label>
-                        <input  class="admin-room-details__input-text" 
-                                type="text" 
-                                :room_idx="room_idx"
-                                name="floor" 
-                                :value="room.floor"
-                                @input="handleInputChange($event, room_idx)"
-                        />
-                        <label  class="admin-room-details__label">Floor space</label>
-                        <input  class="admin-room-details__input-text" 
-                                type="text" 
-                                :room_idx="room_idx"
-                                name="floor_space" 
-                                :value="room.floor_space"
-                                @input="handleInputChange($event, room_idx)"
-                        />  
-                        <label  class="admin-room-details__label">Ensuite</label>
-                        <input  class="admin-room-details__input-checkbox"
-                                type="checkbox" 
-                                :room_idx="room_idx"
-                                id="ensuite" 
-                                value="ensuite" 
-                                name="ensuite" 
-                                :checked="room.ensuite"
-                                @change="handleCheckboxChange($event, room_idx)"
-                        />                        
-                        <label  class="admin-room-details__label">Disabled access</label>
-                        <input  class="admin-room-details__input-checkbox"
-                                type="checkbox" 
-                                :room_idx="room_idx"
-                                id="disabled_access" 
-                                value="disabled_access" 
-                                name="disabled_access" 
-                                :checked="room.disabled_access"
-                                @change="handleCheckboxChange($event, room_idx)"
-                        />
+                        <div class="form__row">
+                            <label  class="admin-room-details__label">Room name</label>
+                            <input  class="admin-room-details__input-text" 
+                                    type="text" 
+                                    :room_idx="room_idx"
+                                    name="room_name" 
+                                    :value="room.room_name"
+                                    @input="handleInputChange($event, room_idx)"
+                            />
+                        </div>
+                        <div class="form__row">
+                            <label  class="admin-room-details__label">Room ID</label>
+                            <input  class="admin-room-details__input-text" 
+                                    type="text" 
+                                    :room_idx="room_idx"
+                                    name="room_id" 
+                                    :value="room.room_id"
+                                    @input="handleInputChange($event, room_idx)"
+                            />   
+                        </div>
+                        <div class="form__row">                                               
+                            <label  class="admin-room-details__label">Floor</label>
+                            <input  class="admin-room-details__input-text" 
+                                    type="text" 
+                                    :room_idx="room_idx"
+                                    name="floor" 
+                                    :value="room.floor"
+                                    @input="handleInputChange($event, room_idx)"
+                            />
+                        </div>
+                        <div class="form__row">                            
+                            <label  class="admin-room-details__label">Floor space</label>
+                            <input  class="admin-room-details__input-text" 
+                                    type="text" 
+                                    :room_idx="room_idx"
+                                    name="floor_space" 
+                                    :value="room.floor_space"
+                                    @input="handleInputChange($event, room_idx)"
+                            /> 
+                        </div>
+                        <div class="form__row">                             
+                            <label  class="admin-room-details__label">Ensuite</label>
+                            <input  class="admin-room-details__input-checkbox"
+                                    type="checkbox" 
+                                    :room_idx="room_idx"
+                                    id="ensuite" 
+                                    value="ensuite" 
+                                    name="ensuite" 
+                                    :checked="room.ensuite"
+                                    @change="handleCheckboxChange($event, room_idx)"
+                            />    
+                        </div>
+                        <div class="form__row">                                                
+                            <label  class="admin-room-details__label">Disabled access</label>
+                            <input  class="admin-room-details__input-checkbox"
+                                    type="checkbox" 
+                                    :room_idx="room_idx"
+                                    id="disabled_access" 
+                                    value="disabled_access" 
+                                    name="disabled_access" 
+                                    :checked="room.disabled_access"
+                                    @change="handleCheckboxChange($event, room_idx)"
+                            />
+                        </div>
                     </form>
                 </li>
             </ul>
+        </div>
+        <div class="no-room-details-message" v-if="room_details.length === 0">
+            There are no details about rooms for this property at the present time.
         </div>
     </div>
 </template>
@@ -141,6 +156,11 @@ export default {
     border-bottom-right-radius: 10px;
 }
 
+.form__row {
+    display: flex;
+    flex-direction: row;
+}
+
 .admin-room-details__label {
     display: inline-block;
     width: 50%;
@@ -154,11 +174,11 @@ export default {
 .admin-room-details__input-text {
     display: inline-block;
     padding: 5px;
-    text-align: left;
     box-sizing: border-box;
     width: 50%;
-    margin: 2px auto;
+    margin: 3px auto;
     border: 1px solid #ccc;
+    text-align: left;
 }
 
 .admin-room-details__input-text
@@ -173,6 +193,14 @@ export default {
     outline: none;
     border: none;
     box-shadow: var(--orangey-red-color) 0px 0px 2px 2px;
+}
+
+.no-room-details-message {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #444;
 }
 
 

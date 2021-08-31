@@ -7,18 +7,10 @@
 </template>
 
 <script>
-// import Facilities           from './Facilities.vue'
-// import EnergyPerformance    from './EnergyPerformance.vue'
-// import Eligibility          from './Eligibility.vue'
 
 export default {
     name: 'AmenitiesContainer',
     props: ['propertyData'],
-    // components: {
-    //     Facilities,
-    //     EnergyPerformance,
-    //     Eligibility
-    // },
     computed: {
         property() {
             return this.propertyData ? this.propertyData : undefined

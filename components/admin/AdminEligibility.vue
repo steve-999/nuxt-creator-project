@@ -60,7 +60,6 @@ export default {
     },
     methods: {
         handleCheckboxChange(name, value, indices) {
-            console.log(`AdminEligibility > handleCheckboxChange > name ${name}, value ${value}`)
             const update_key = `eligibility.${name}`
             update_mongodb(this.property_id, update_key, value)
         },

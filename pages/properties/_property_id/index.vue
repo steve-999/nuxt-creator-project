@@ -1,6 +1,5 @@
 <template>
     <div class="property-container fadeInAnimation">
-        <h3>PropertyDetails works</h3>
         <TopOfPageContainer     class="item-TopOfPageContainer" :propertyData="property"/>
         <PropertyInfo           class="item-PropertyInfo" :propertyData="property" />
         <GoogleMap              class="item-GoogleMap" :propertyData="property" />
@@ -12,12 +11,6 @@
 <script>
 import axios from 'axios';
 import { BASE_API_URL } from '../../../environment/environment.js'
-// import TopOfPageContainer from '../components/TopOfPageContainer.vue'
-// import AmenitiesContainer from '../components/AmenitiesContainer.vue'
-// import PropertyInfo from '../components/PropertyInfo.vue'
-// import Availability from '../components/Availability.vue'
-// import GoogleMap from '../components/GoogleMap.vue'
-// import Footer from '../components/Footer.vue'
 
 export default {
     name: 'PropertyDetails',
@@ -30,14 +23,6 @@ export default {
             address: undefined,
         }
     },
-    // components: {
-    //     TopOfPageContainer,
-    //     PropertyInfo,
-    //     AmenitiesContainer,
-    //     Availability,
-    //     GoogleMap,
-    //     Footer
-    // },
     async created() {
         this.property_id = this.$route.params.property_id
         const url = `${BASE_API_URL}/properties/${this.property_id}`

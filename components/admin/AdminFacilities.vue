@@ -12,7 +12,6 @@
 <script>
 import InputListForm from '../generic/InputListForm.vue'
 import { update_mongodb } from '../../shared/shared_code.js'
-//import { _, debounce } from 'lodash'
 
 export default {
     name: 'AdminFacilities',
@@ -46,7 +45,6 @@ export default {
     },
     methods: {
         handleInputListChange(idx, value, indices) {
-            //console.log(`AdminFacilities > handleInputListChange > indices ${indices} idx ${idx} value ${value}`)
             const update_key = `facilities.${idx}`
             update_mongodb(this.property_id, update_key, value)
         }

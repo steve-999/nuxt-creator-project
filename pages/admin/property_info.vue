@@ -1,6 +1,5 @@
 <template>
     <div class="admin-property-info-container">
-      
             <div class="components-container">
                 <div class="top-component-container">
                     <InputListWithLabels
@@ -122,12 +121,10 @@ export default {
     },
     methods: {
         handleInput__TopList(name, value, indices) {
-            console.log(`AdminPropertyInfo > handleInput__TopList > indices ${indices} name ${name} value ${value}`)
             const update_key = name
             update_mongodb(this.property_id, update_key, value)
         },
         handleInput__Address(name, value, indices) {
-            console.log(`AdminPropertyInfo > handleInput__Address > indices ${indices} name ${name} value ${value}`)
             const update_key = `address.${name}`
             update_mongodb(this.property_id, update_key, value)            
         },
@@ -144,6 +141,7 @@ export default {
 
 .admin-property-info-container {
     width: 100%;
+    padding: 0;
 }
 
 .top-component-container {
@@ -196,7 +194,7 @@ export default {
 .description__textarea {
     width: 95%;
     height: 45vh;
-    padding: 5px;
+    padding: 5px 12px;
     margin: 2px auto;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9em;
@@ -205,6 +203,12 @@ export default {
     text-align: left;
     box-sizing: border-box;
     border-radius: 12px;
+}
+
+.description__textarea:focus {
+    outline: none;
+    border: none;
+    box-shadow: var(--orangey-red-color) 0px 0px 2px 2px;
 }
 
 

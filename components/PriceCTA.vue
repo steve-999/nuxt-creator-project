@@ -27,15 +27,11 @@
 </template>
 
 <script>
-//import PropertyHeading from './PropertyHeading.vue'
 import { get_min_total_monthly_price, get_min_total_deposit } from '../shared/shared_code.js'
 
 export default {
     name: 'PriceCTA',
     props: ['propertyData'],
-    // components: {
-    //     PropertyHeading
-    // },
     data() {
         return {
             position_type: 'static',

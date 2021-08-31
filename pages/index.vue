@@ -7,27 +7,21 @@
 </template>
 
 <script>
-//import axios from 'axios';
 import { BASE_API_URL } from '../environment/environment.js'
-//import PropertySummary from '../components/PropertySummary.vue'
 
 export default {
     name: 'Home',
-    // components: {
-    //     PropertySummary
-    // },
     data() {
         return {  
             properties: null  
         }
     },
     fetch() {
-        const url = `${BASE_API_URL}/properties`;
+        const url = `${BASE_API_URL}/properties`
         fetch(url)
             .then(res => res.json())
             .then(data => {
                 this.properties = data
-                console.log('this.properties', this.properties)
             })
     }
 }

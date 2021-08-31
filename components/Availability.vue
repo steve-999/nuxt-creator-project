@@ -3,24 +3,16 @@
         <h2>Availability</h2>
         <div class="contract-details-container">
             <DateTabs :start_end_dates="start_end_dates" :propertyData="this.property" @dateTabClicked="handleChildDateTabClicked" />
-            <!-- <router-view></router-view>           -->
             <Contract :contract_idx="contract_idx" :propertyData="this.property" />
         </div>
     </div>
 </template>
 
 <script>
-// import DateTabs from './DateTabs.vue'
-// import Contract    from './Contract.vue'
-//import router from '../router/index.js'
 
 export default {
     name: 'Availability',
     props: ['propertyData'],
-    // components: {
-    //     DateTabs,
-    //     Contract,
-    // },
     data() {
         return {
             contract_idx: 0
@@ -30,14 +22,6 @@ export default {
         property() {
             if (!this.propertyData || !('contracts' in this.propertyData) || this.propertyData.contracts.length === 0)
                 return undefined
-            //this.$router.push({ path: `/properties/${this.propertyData.property_id}/${this.contract_idx}` })
-            //this.contract_idx = 
-            // this.$router.replace({ name: 'Contract', 
-            //             params: { 
-            //                 propertyData: JSON.stringify(this.property), 
-            //                 contract_idx: this.contract_idx
-            //             } 
-            //         })
             return this.propertyData ? this.propertyData : undefined
         },
         start_end_dates() {
@@ -57,19 +41,12 @@ export default {
             catch(e) {
                 return 0
             }
-        },
+        }
     },
     methods: {
         handleChildDateTabClicked(new_contract_idx) {
             this.contract_idx = new_contract_idx
-            //this.$router.push({ path: `/properties/${this.propertyData.property_id}/${this.contract_idx}` })
-            // this.$router.push({ name: 'Contract', 
-            //                     params: { 
-            //                         propertyData: JSON.stringify(this.property), 
-            //                         contract_idx: JSON.stringify(this.contract_idx) 
-            //                     } 
-            //                 })
-        },
+        }
     }
 }
 </script>
@@ -77,13 +54,11 @@ export default {
 <style scoped>
 
 .availability-container {
-    /* outline: 2px solid blue; */
     width: 100%;
 }
 
 .contract-details-container {
     width: 100%;
-    /* outline: 2px solid violet; */
 }
 
 h2 {

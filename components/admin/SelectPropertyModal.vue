@@ -116,6 +116,7 @@ export default {
     top: 0;
     height: 100%;
     width: 100%;
+    z-index: 99;
 }
 
 .modal-content-container {

@@ -4,8 +4,8 @@
         <ul class="room-details__ul">
             <li v-for="key in keys_list" :key="key" class="room-details__li">
                 <div v-show="room[key] !== null" class="room-details__div">
-                    <span :ref="`room_details_key_${key}`" class="room-details__key" :key="Math.random()">{{ display_keys[key] }}</span>
-                    <span :ref="`room_details_value_${key}`" class="room-details__value" :key="Math.random()">{{ room[key] }}</span>
+                    <span class="room-details__key" :key="key">{{ display_keys[key] }}</span>
+                    <span class="room-details__value" :key="key">{{ room[key] }}</span>
                 </div>
             </li>
         </ul>
@@ -20,15 +20,6 @@ export default {
     data() {
         return {
             room: undefined,
-            // room_id: undefined,
-            // room_name: undefined,
-            // disabled_access: undefined,
-            // ensuite: undefined,
-            // floor: undefined,
-            // floor_space: undefined,
-            // deposit_per_person: undefined,
-            // price_per_person_per_week: undefined,
-            // fee_per_person: undefined,
             keys_list: [
                 'price_per_person_per_week',
                 'deposit_per_person',
@@ -78,8 +69,8 @@ export default {
                 room.fee_per_person = parseFloat(room_prices.fee_per_person) > 0 ? '£' + Math.round(room_prices.fee_per_person) : null
                 this.room = {...room}
             }
-        },
-    },
+        }
+    }
 }
 </script>
 
@@ -125,8 +116,13 @@ export default {
     padding-bottom: 4px;
 }
 
+.room-details__div {
+    display: flex;
+    flex-direction: row;
+}
+
 .room-details__li span {
-    padding: 6px 5px;
+    padding: 7px 8px;
 }
 
 .room-details__key {
@@ -141,5 +137,6 @@ export default {
     text-align: right;
     padding-right: 5%;
 }
+
 
 </style>

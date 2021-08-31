@@ -26,9 +26,7 @@ export default {
             return `${url_prefix}${url_lat_lng}${url_postfix}`
         },
         addressString() {
-            if (!this.property)
-                return ''
-            return create_address_string(this.property.address)
+            return this.property ? create_address_string(this.property.address) : ''
         },
     }
 }

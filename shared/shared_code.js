@@ -107,13 +107,11 @@ export const get_min_total_deposit = propertyObj => get_min_total_amount(propert
 
 
 export const update_mongodb = (property_id, update_key, update_val) => {
-    //console.log('update_mongodb() :', property_id, update_key, update_val)
     const url = `${BASE_API_URL}/properties/${property_id}`
     const body = {
         update_key,
         update_val
     }
-    console.log(`update_mongodb > property_id ${property_id} update_key ${update_key} update_val ${update_val}`)
     axios.patch(url, body)
         .then(resp => console.log(resp.data))
         .catch(err => console.log(err.message))
@@ -122,27 +120,9 @@ export const update_mongodb = (property_id, update_key, update_val) => {
 export const DEBOUNCE_MS = 2000
 
 export function debounce(fn, ms=300) { 
-    console.log('inside debounce > ms', ms)
     let timer
     return () => { 
-        console.log('reset timer')
         clearTimeout(timer)
-        //console.log('timer', timer)
         timer = setTimeout(() => fn.apply(this, arguments), ms)
     }
 }
-
-// export function debounce(func, wait, immediate) {
-// 	var timeout;
-// 	return function() {
-// 		var context = this, args = arguments;
-// 		var later = function() {
-// 			timeout = null;
-// 			if (!immediate) func.apply(context, args);
-// 		};
-// 		var callNow = immediate && !timeout;
-// 		clearTimeout(timeout);
-// 		timeout = setTimeout(later, wait);
-// 		if (callNow) func.apply(context, args);
-// 	};
-// };

@@ -50,7 +50,6 @@ export default {
     },
     methods: {
         handleInputListWithLabelsChange(name, value, indices) {
-            console.log(`AdminEnergyPerformance > handleInputListWithLabelsChange > indices ${indices} name ${name} value ${value}`)
             const update_key = `energy_performance.${name}`
             update_mongodb(this.property_id, update_key, value)
         }

@@ -66,11 +66,12 @@ export default {
 
 .tabs-container {
     width: 67%;
+    text-align: center;
 }
 
 .tabs__ul {
     list-style-type: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 

@@ -44,6 +44,7 @@
                     </ul>
                 </li>
             </ul>
+            <div class="no-contracts-message" v-if="num_contracts === 0">There are no contracts for this property at the present time.</div>
         </div>
     </div>
 </template>
@@ -153,6 +154,10 @@ export default {
     background-color: #f8f8f8;
 }
 
+.admin-contracts-container {
+    padding: 10px 0;
+}
+
 .admin-contracts__ul {
     list-style-type: none;
     margin: 0;
@@ -161,8 +166,8 @@ export default {
 
 .admin-contracts__li {
     width: 90%;
-    margin: 30px auto;
-    padding: 20px;
+    margin: 0 auto 30px auto;
+    padding: 10px;
     background-color: #d8d8d8;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -228,6 +233,14 @@ export default {
     font-weight: 700;
     margin: 0 auto;
     text-align: center;
+}
+
+.no-contracts-message {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #444;
 }
 
 </style>
