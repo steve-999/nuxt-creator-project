@@ -1,5 +1,4 @@
 const express = require('express');
-//const path = require('path');
 const morgan = require('morgan');
 const fs = require('fs');
 const cors = require('cors')
@@ -16,15 +15,10 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('mongo db connected'))
     .catch(err => console.log(err));
 
-//app.use(express.static(path.join(__dirname, '/frontend/dist')));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
 
-
-app.get('/test', (req, res) => {
-    res.send('dbUri')
-})
 
 app.post('/create_test_collection', async (req, res) => {
     const path = 'C:/www/coursera/vue/creator-project/data.txt'
@@ -75,14 +69,6 @@ app.patch('/properties/:property_id', async (req, res) => {
         res.json(err)
     }
 });
-
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '/frontend/dist/index.html'));
-// });
-
-app.get('/echo/:what', (req, res) => {
-    res.json(req.params)
-})
 
 
 module.exports = {
